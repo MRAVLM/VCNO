@@ -58,11 +58,11 @@
 | داکس | فایل | وضعیت |
 |---|---|---|
 | معرفی رسمی VCNO | `docs/ABOUT.md` | ✅ کامل |
-| شروع سریع | `docs/getting-started.md` | 🟡 در حال نگارش |
-| معماری پروژه | `docs/architecture.md` | 🟡 در حال نگارش |
-| قواعد کدنویسی | `docs/conventions.md` | 🟡 در حال نگارش |
-| مرجع API | `docs/api.md` | ⚪ خالی |
-| چگونه کمک کنم؟ | `docs/contributing.md` | ⚪ خالی |
+| شروع سریع | `docs/getting-started.md` | ✅ کامل |
+| معماری پروژه | `docs/architecture.md` | ✅ کامل |
+| قواعد کدنویسی | `docs/conventions.md` | ✅ کامل |
+| مرجع API | `docs/api.md` | ⚪ بدون API (تا `/Build`) |
+| چگونه کمک کنم؟ | `docs/contributing.md` | ✅ کامل |
 
 ---
 

@@ -65,8 +65,8 @@ AI-assisted developers, Vibe Coders, backend / frontend / full-stack developers,
 
 ## Author / Creator
 
-- **Created by:** MRAVLM — GitHub owner `MRAVLM` **verified**; full name *Amirali Marjani* `NEEDS CONFIRMATION`.
-- **Built with:** AI coding agent assistance `NEEDS CONFIRMATION` — the specific agent(s) are not stated in the skill files.
+- **Created by:** MRAVLM (Amirali Marjani) — confirmed by the project owner (2026-10-04).
+- **Built with:** AI coding agent assistance — confirmed by the project owner.
 
 ## Repository
 
@@ -85,7 +85,7 @@ Future releases may add new skills, refine existing ones, improve documentation,
 | Repository inspected | `VERIFIED` — https://github.com/MRAVLM/VCNO reachable, public; v1.0 pushed as `ef79773` (2026-10-04) |
 | Existing README found | `VERIFIED` — none upstream at inspection time; placeholder README in this copy merged, not overwritten |
 | Existing docs found | `VERIFIED` — none upstream at inspection time; `docs/` extended in place |
-| Author attribution | `PARTIAL` — owner `MRAVLM` verified; full name `NEEDS CONFIRMATION` |
+| Author attribution | `VERIFIED` — MRAVLM (Amirali Marjani), confirmed by project owner (2026-10-04) |
 | License | `VERIFIED` — MIT, [`LICENSE`](../LICENSE) file present |
 | Version number in repo | `PARTIAL` — README declares v1.0; no git tag yet (`NEEDS CONFIRMATION`) |
 | Exact invocation mechanism | `VERIFIED` for this repo — skills invoked by name (e.g. `/init`) per [`AGENTS.md`](../AGENTS.md); agent-specific shims provided |
@@ -96,10 +96,10 @@ Future releases may add new skills, refine existing ones, improve documentation,
 
 ## Next Recommended Step
 
-1. ~~Confirm the items marked `NEEDS CONFIRMATION` by inspecting the repository~~ — done; remaining: full author name, version tag.
+1. ~~Confirm the items marked `NEEDS CONFIRMATION` by inspecting the repository~~ — done; remaining: version tag.
 2. ~~Check whether a `README.md`, `README.fa.md`, `LICENSE`, or `docs/` already exist~~ — done: upstream was empty; local files merged in place.
 3. ~~Verify the exact invocation mechanism~~ — done: skill name = command (`/init`, `/check`, `/PRD`, `/Build`, `/Feedback`, `/Doc`).
-4. ~~Add the `LICENSE` file~~ — done: MIT [`LICENSE`](../LICENSE) added (2026-10-04). Remaining: confirm author full name.
+4. ~~Add the `LICENSE` file~~ — done: MIT [`LICENSE`](../LICENSE) added (2026-10-04). Author name confirmed by owner.
 5. ~~Publish this copy to `MRAVLM/VCNO` as official v1.0 documentation~~ — done: pushed as `ef79773`.
 
 ## پیوند به داکس‌های مرتبط

@@ -182,5 +182,5 @@ Contributions, issues, and suggestions are welcome through the repository. Pleas
 
 ## Author
 
-- **Created by:** MRAVLM — GitHub owner `MRAVLM` verified; full name *Amirali Marjani* `NEEDS CONFIRMATION`.
-- **Built with:** AI coding agent assistance. `NEEDS CONFIRMATION` — the specific agent(s) are not stated in the skill files.
+- **Created by:** MRAVLM (Amirali Marjani)
+- **Built with:** AI coding agent assistance
