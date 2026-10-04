@@ -1,0 +1,11 @@
+# Local tool state
+.freebuff/
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies
+node_modules/
