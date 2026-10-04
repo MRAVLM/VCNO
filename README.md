@@ -178,7 +178,7 @@ Contributions, issues, and suggestions are welcome through the repository. Pleas
 
 ## License
 
-**MIT (planned)** — `NEEDS CONFIRMATION`: no `LICENSE` file exists in the repository yet (`README.md` states "MIT — coming soon"). Confirm before publishing.
+**MIT** — see the [`LICENSE`](LICENSE) file for details.
 
 ## Author
 

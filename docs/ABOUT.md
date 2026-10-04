@@ -61,7 +61,7 @@ AI-assisted developers, Vibe Coders, backend / frontend / full-stack developers,
 
 ## Project Status
 
-**Version 1 / Public project.** The repository (`MRAVLM/VCNO`) is public but currently **empty** (verified 2026-10-04) — this working copy holds the v1.0 content awaiting publication. Not claimed as production-ready. Not claimed as stable beyond what the repository states.
+**Version 1 / Public project.** The repository (`MRAVLM/VCNO`) is public and **published** with v1.0 content (initial commit `ef79773`, 2026-10-04). Not claimed as production-ready. Not claimed as stable beyond what the repository states.
 
 ## Author / Creator
 
@@ -82,12 +82,12 @@ Future releases may add new skills, refine existing ones, improve documentation,
 
 | Item | Status |
 |---|---|
-| Repository inspected | `VERIFIED` — https://github.com/MRAVLM/VCNO reachable, public, **empty** (2026-10-04) |
-| Existing README found | `VERIFIED` — none upstream; placeholder README in this copy merged, not overwritten |
-| Existing docs found | `VERIFIED` — none upstream; `docs/` in this copy extended in place |
+| Repository inspected | `VERIFIED` — https://github.com/MRAVLM/VCNO reachable, public; v1.0 pushed as `ef79773` (2026-10-04) |
+| Existing README found | `VERIFIED` — none upstream at inspection time; placeholder README in this copy merged, not overwritten |
+| Existing docs found | `VERIFIED` — none upstream at inspection time; `docs/` extended in place |
 | Author attribution | `PARTIAL` — owner `MRAVLM` verified; full name `NEEDS CONFIRMATION` |
-| License | `NEEDS CONFIRMATION` — no `LICENSE` file exists; README states "MIT (planned)" |
-| Version number in repo | `NEEDS CONFIRMATION` — empty upstream repo has no tags; this copy declares v1.0 |
+| License | `VERIFIED` — MIT, [`LICENSE`](../LICENSE) file present |
+| Version number in repo | `PARTIAL` — README declares v1.0; no git tag yet (`NEEDS CONFIRMATION`) |
 | Exact invocation mechanism | `VERIFIED` for this repo — skills invoked by name (e.g. `/init`) per [`AGENTS.md`](../AGENTS.md); agent-specific shims provided |
 | Contents of the six skills | `VERIFIED` — [`skills/`](../skills/README.md) |
 | Workflow order | `VERIFIED` |
@@ -96,11 +96,11 @@ Future releases may add new skills, refine existing ones, improve documentation,
 
 ## Next Recommended Step
 
-1. ~~Confirm the items marked `NEEDS CONFIRMATION` by inspecting the repository~~ — done; remaining: LICENSE file, full author name, upstream version tag.
-2. ~~Check whether a `README.md`, `README.fa.md`, `LICENSE`, or `docs/` already exist~~ — done: upstream is empty; README merged in place locally.
+1. ~~Confirm the items marked `NEEDS CONFIRMATION` by inspecting the repository~~ — done; remaining: full author name, version tag.
+2. ~~Check whether a `README.md`, `README.fa.md`, `LICENSE`, or `docs/` already exist~~ — done: upstream was empty; local files merged in place.
 3. ~~Verify the exact invocation mechanism~~ — done: skill name = command (`/init`, `/check`, `/PRD`, `/Build`, `/Feedback`, `/Doc`).
-4. Add the `LICENSE` file (MIT planned) and confirm author metadata.
-5. Publish this copy to `MRAVLM/VCNO` as official v1.0 documentation.
+4. ~~Add the `LICENSE` file~~ — done: MIT [`LICENSE`](../LICENSE) added (2026-10-04). Remaining: confirm author full name.
+5. ~~Publish this copy to `MRAVLM/VCNO` as official v1.0 documentation~~ — done: pushed as `ef79773`.
 
 ## پیوند به داکس‌های مرتبط
 
