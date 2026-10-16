@@ -4,14 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VCNO — Official User Guide v1.0.1</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    VCNO Official User Guide — v1.0.1
    Bilingual (EN + FA) A4 Portrait print-ready handbook
    ============================================================ */
+
+/* ---------- Self-hosted fonts (offline-capable; no CDN) ---------- */
+@font-face{font-family:"Vazirmatn";src:url("fonts/vazirmatn-400.woff") format("woff");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Vazirmatn";src:url("fonts/vazirmatn-700.woff") format("woff");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Vazirmatn";src:url("fonts/vazirmatn-800.woff") format("woff");font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("fonts/inter-400.woff") format("woff");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("fonts/inter-600.woff") format("woff");font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("fonts/inter-700.woff") format("woff");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("fonts/inter-800.woff") format("woff");font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:"JetBrains Mono";src:url("fonts/jetbrains-mono-400.woff") format("woff");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"JetBrains Mono";src:url("fonts/jetbrains-mono-600.woff") format("woff");font-weight:600;font-style:normal;font-display:swap;}
 
 :root{
   --vcno-primary:#1f3a5f;
@@ -1888,6 +1896,7 @@ User: /Doc</code></pre>
       <tr><td>AI tool entry points</td><td>Verified (from README)</td></tr>
       <tr><td>Exact invocation mechanism in each agent</td><td>Needs confirmation (depends on agent)</td></tr>
       <tr><td>PDF rendering of this HTML</td><td>Verified — generated as vcnobook/VCNO.pdf on 2026-10-16</td></tr>
+      <tr><td>PDF font embedding</td><td>Verified — 8 embedded faces (Inter, Vazirmatn, JetBrains Mono) + 5 system-fallback subsets for rare symbols (Arial, Segoe UI, Consolas); Persian glyph coverage of Vazirmatn checked (ک/گ/ی present)</td></tr>
     </tbody>
   </table>
 
