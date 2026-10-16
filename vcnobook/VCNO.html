@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VCNO — Official User Guide v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VCNO Official User Guide — v1.0
+   Bilingual (EN + FA) A4 Portrait print-ready handbook
+   ============================================================ */
+
+:root{
+  --vcno-primary:#1f3a5f;
+  --vcno-accent:#c9542b;
+  --vcno-ink:#111418;
+  --vcno-muted:#5a6472;
+  --vcno-rule:#d8dde5;
+  --vcno-soft:#f4f6fa;
+  --vcno-code-bg:#f6f7f9;
+  --vcno-code-ink:#24292f;
+  --vcno-warn-bg:#fff7e6;
+  --vcno-warn-border:#e0a800;
+  --vcno-note-bg:#eef4fb;
+  --vcno-note-border:#3b6ea5;
+  --vcno-ok-bg:#eefaf1;
+  --vcno-ok-border:#2e9e5b;
+
+  --vcno-font-en:"Inter","Helvetica Neue",Arial,system-ui,sans-serif;
+  --vcno-font-en-heading:"Inter","Helvetica Neue",Arial,system-ui,sans-serif;
+  --vcno-font-en-mono:"JetBrains Mono","SF Mono",Consolas,"Courier New",monospace;
+
+  --vcno-font-fa:"Vazirmatn","IRANSans","Segoe UI",Tahoma,sans-serif;
+  --vcno-font-fa-mono:"JetBrains Mono","Vazirmatn",Consolas,monospace;
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#eaecef;color:var(--vcno-ink);}
+body{
+  font-family:var(--vcno-font-en);
+  font-size:11pt;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1;
+}
+
+/* Page surface (screen only) */
+.page{
+  background:#fff;
+  width:210mm;
+  min-height:297mm;
+  margin:14mm auto;
+  padding:22mm 20mm 24mm 20mm;
+  box-shadow:0 6px 24px rgba(0,0,0,.12);
+  position:relative;
+}
+
+/* Persian section reset */
+.fa{
+  direction:rtl;
+  text-align:right;
+  font-family:var(--vcno-font-fa);
+  font-feature-settings:"ss01" 1;
+}
+.fa .mono,.fa code,.fa pre{font-family:var(--vcno-font-fa-mono);direction:ltr;text-align:left;}
+.fa h1,.fa h2,.fa h3,.fa h4{font-family:var(--vcno-font-fa);font-weight:700;}
+.fa p{line-height:1.9;}
+.fa li{line-height:1.85;}
+
+/* ---------- Cover ---------- */
+.cover{
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  color:var(--vcno-ink);
+}
+.cover-inner{
+  padding:32mm 20mm 24mm 20mm;
+  display:flex;flex-direction:column;height:100%;
+  min-height:297mm;
+}
+.cover-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--vcno-muted);
+}
+.cover-mark{
+  width:38mm;
+  height:38mm;
+  border:2px solid var(--vcno-primary);
+  border-radius:4px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.cover-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.cover-title{
+  margin-top:40mm;
+}
+.cover-title h1{
+  font-size:64pt;line-height:1;margin:0;font-weight:800;
+  letter-spacing:-.02em;color:var(--vcno-primary);
+}
+.cover-title .sub{
+  font-size:20pt;font-weight:600;color:var(--vcno-accent);
+  margin-top:6mm;letter-spacing:.01em;
+}
+.cover-title .tag{
+  font-size:13pt;color:var(--vcno-muted);margin-top:10mm;max-width:140mm;
+  line-height:1.5;
+}
+.cover-meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:6mm 12mm;
+  border-top:1px solid var(--vcno-rule);padding-top:8mm;margin-top:auto;
+  font-size:10pt;
+}
+.cover-meta div span{display:block;color:var(--vcno-muted);font-size:9pt;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1mm;}
+.cover-meta div strong{font-weight:600;color:var(--vcno-ink);}
+
+/* ---------- Section headings ---------- */
+h1,h2,h3,h4{font-family:var(--vcno-font-en-heading);color:var(--vcno-primary);}
+h1.chapter{
+  font-size:24pt;line-height:1.25;margin:0 0 8mm 0;
+  padding-bottom:4mm;border-bottom:2px solid var(--vcno-primary);
+  break-after:avoid;
+  page-break-after:avoid;
+}
+h1.chapter .num{
+  display:block;font-size:11pt;font-weight:500;color:var(--vcno-accent);
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:2mm;
+}
+h2{font-size:15pt;margin:9mm 0 3mm 0;break-after:avoid;page-break-after:avoid;}
+h3{font-size:12.5pt;margin:6mm 0 2mm 0;break-after:avoid;page-break-after:avoid;color:#24425f;}
+h4{font-size:11pt;margin:4mm 0 1.5mm 0;color:#24425f;}
+
+p{margin:0 0 3.5mm 0;}
+ul,ol{margin:0 0 3.5mm 0;padding-inline-start:6mm;}
+li{margin-bottom:1.5mm;}
+
+/* ---------- Code ---------- */
+code{
+  font-family:var(--vcno-font-en-mono);
+  background:var(--vcno-code-bg);border:1px solid #e5e8ec;border-radius:3px;
+  padding:1px 5px;font-size:9.5pt;color:var(--vcno-code-ink);
+  white-space:nowrap;
+}
+pre{
+  background:var(--vcno-code-bg);border:1px solid #e5e8ec;border-left:3px solid var(--vcno-primary);
+  border-radius:3px;padding:4mm 5mm;font-family:var(--vcno-font-en-mono);
+  font-size:9pt;line-height:1.6;overflow:auto;color:var(--vcno-code-ink);
+  break-inside:avoid;page-break-inside:avoid;
+  margin:4mm 0;
+}
+pre code{background:transparent;border:0;padding:0;font-size:inherit;white-space:pre;}
+
+/* ---------- Callouts ---------- */
+.callout{
+  border:1px solid var(--vcno-rule);border-left:4px solid var(--vcno-note-border);
+  background:var(--vcno-note-bg);border-radius:3px;padding:4mm 5mm;margin:5mm 0;
+  break-inside:avoid;page-break-inside:avoid;
+}
+.callout.warn{border-left-color:var(--vcno-warn-border);background:var(--vcno-warn-bg);}
+.callout.ok{border-left-color:var(--vcno-ok-border);background:var(--vcno-ok-bg);}
+.callout .label{
+  font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--vcno-muted);display:block;margin-bottom:2mm;
+}
+.callout p:last-child{margin-bottom:0;}
+.callout ul:last-child,.callout ol:last-child{margin-bottom:0;}
+
+.fa .callout{direction:rtl;text-align:right;border-left:1px solid var(--vcno-rule);border-right:4px solid var(--vcno-note-border);}
+.fa .callout.warn{border-right-color:var(--vcno-warn-border);}
+.fa .callout.ok{border-right-color:var(--vcno-ok-border);}
+
+/* ---------- Tables ---------- */
+table{
+  width:100%;border-collapse:collapse;margin:5mm 0;font-size:10pt;
+  break-inside:avoid;page-break-inside:avoid;
+}
+thead{background:var(--vcno-soft);}
+th,td{
+  text-align:left;padding:2.5mm 3mm;border:1px solid var(--vcno-rule);vertical-align:top;
+  line-height:1.5;
+}
+th{font-weight:600;color:var(--vcno-primary);}
+.fa th,.fa td{text-align:right;}
+
+/* ---------- Workflow diagram ---------- */
+.workflow{
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  margin:6mm 0;break-inside:avoid;page-break-inside:avoid;
+}
+.workflow .step{
+  border:1.5px solid var(--vcno-primary);border-radius:3px;
+  padding:3mm 6mm;font-weight:600;color:var(--vcno-primary);
+  background:#fff;min-width:60mm;text-align:center;font-size:11pt;
+  line-height:1.3;
+}
+.workflow .step .name{font-family:var(--vcno-font-en-mono);display:block;}
+.workflow .step .desc{display:block;font-size:9pt;font-weight:400;color:var(--vcno-muted);margin-top:1.5mm;}
+.workflow .arrow{
+  width:0;height:7mm;border-left:2px solid var(--vcno-accent);
+  position:relative;
+}
+.workflow .arrow::after{
+  content:"";position:absolute;left:-4px;bottom:-1px;
+  border-left:5px solid transparent;border-right:5px solid transparent;
+  border-top:6px solid var(--vcno-accent);
+}
+.workflow .loop{
+  font-size:9pt;color:var(--vcno-accent);font-weight:600;margin:2mm 0;
+}
+
+/* Inline linear diagram */
+.inline-flow{
+  display:flex;flex-wrap:wrap;gap:2mm;align-items:center;justify-content:center;
+  margin:5mm 0;font-family:var(--vcno-font-en-mono);font-size:10pt;
+  break-inside:avoid;page-break-inside:avoid;
+}
+.inline-flow .n{
+  padding:1.5mm 3mm;border:1px solid var(--vcno-primary);border-radius:3px;color:var(--vcno-primary);
+}
+.inline-flow .a{color:var(--vcno-accent);font-weight:700;}
+
+/* ---------- TOC ---------- */
+.toc{list-style:none;padding:0;margin:6mm 0;font-size:11pt;}
+.toc li{
+  display:flex;justify-content:space-between;gap:4mm;
+  border-bottom:1px dotted var(--vcno-rule);padding:2mm 0;
+  break-inside:avoid;page-break-inside:avoid;
+}
+.toc li a{color:var(--vcno-ink);text-decoration:none;}
+.toc li a:hover{color:var(--vcno-accent);}
+.toc .num{color:var(--vcno-accent);font-weight:600;margin-inline-end:3mm;font-family:var(--vcno-font-en-mono);}
+.toc .part{
+  font-weight:700;color:var(--vcno-primary);margin-top:8mm;
+  border-bottom:2px solid var(--vcno-primary);padding-bottom:2mm;
+  display:flex;justify-content:space-between;
+}
+
+/* ---------- Metadata ---------- */
+.meta-block{
+  border:1px solid var(--vcno-rule);background:var(--vcno-soft);border-radius:3px;
+  padding:4mm 5mm;font-size:10pt;color:var(--vcno-ink);
+  break-inside:avoid;page-break-inside:avoid;
+}
+.meta-block dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:2mm 6mm;}
+.meta-block dt{font-weight:600;color:var(--vcno-primary);}
+.meta-block dd{margin:0;color:var(--vcno-muted);}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@page{
+  size:A4 portrait;
+  margin:18mm 16mm 18mm 16mm;
+}
+
+@media print{
+  html,body{background:#fff;}
+  body{font-size:10.5pt;line-height:1.55;}
+
+  /* Screen chrome reset */
+  .page{
+    width:auto;
+    min-height:0;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+    background:transparent;
+    position:static;
+    break-after:page;
+    page-break-after:always;
+  }
+  .page:last-of-type{break-after:auto;page-break-after:auto;}
+
+  /* Force each new sheet */
+  .page + .page{break-before:page;page-break-before:always;}
+
+  /* Cover: full-bleed-ish, no double margins */
+  .cover{
+    display:block;
+    padding:0;
+    margin:0;
+    min-height:auto;
+    break-after:page;
+    page-break-after:always;
+  }
+  .cover-inner{
+    padding:0;
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+  }
+  .cover-mark{
+    border-color:var(--vcno-primary) !important;
+    background:#fff !important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .cover-mark img{width:100%;height:100%;object-fit:contain;}
+
+  a{color:var(--vcno-primary);text-decoration:none;}
+
+  /* Avoid splitting */
+  h1,h2,h3,h4{break-after:avoid;page-break-after:avoid;}
+  pre,table,.callout,.workflow,.inline-flow,.meta-block{
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .toc li{break-inside:avoid;page-break-inside:avoid;}
+  img,svg{max-width:100%;break-inside:avoid;page-break-inside:avoid;}
+
+  /* Persian orphans/widows */
+  .fa p,.fa li{orphans:3;widows:3;}
+
+  /* No stray title headers pushed to next page */
+  h2 + p, h3 + p{break-before:avoid;page-break-before:avoid;}
+}
+
+/* ============================================================
+   SMALL SCREENS (readability only — print still wins)
+   ============================================================ */
+@media screen and (max-width:840px){
+  .page{width:auto;margin:8mm;padding:14mm 12mm;}
+  .cover-inner{padding:16mm;}
+  .cover-title h1{font-size:40pt;}
+  .cover-title .sub{font-size:14pt;}
+  .cover-title .tag{font-size:11pt;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+<section class="page cover" id="cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div>Official User Guide</div>
+      <div>v1.0</div>
+    </div>
+
+    <div class="cover-title">
+      <div class="cover-mark"><img src="logo.png" alt="VCNO"></div>
+      <h1>VCNO</h1>
+      <div class="sub">Vibe Coding NO</div>
+      <div class="tag">A Structured Workflow for AI-Assisted Software Development</div>
+    </div>
+
+    <div class="cover-meta">
+      <div><span>Project</span><strong>VCNO</strong></div>
+      <div><span>Project Version</span><strong>v1.0</strong></div>
+      <div><span>Documentation</span><strong>Official User Guide v1.0</strong></div>
+      <div><span>Language</span><strong>English · فارسی</strong></div>
+      <div><span>Repository</span><strong>github.com/MRAVLM/VCNO</strong></div>
+      <div><span>License</span><strong>MIT</strong></div>
+      <div><span>Created by</span><strong>MRAVLM (Amirali Marjani)</strong></div>
+      <div><span>Built with</span><strong>AI coding agent assistance</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TABLE OF CONTENTS
+     ============================================================ -->
+<section class="page">
+  <h1 class="chapter"><span class="num">Contents</span>Table of Contents</h1>
+
+  <ul class="toc">
+    <li class="part"><span>Part I — فارسی</span><span></span></li>
+    <li><span><span class="num">۱</span>مقدمه‌ای بر VCNO</span><span>فصل ۱</span></li>
+    <li><span><span class="num">۲</span>درک Vibe Coding</span><span>فصل ۲</span></li>
+    <li><span><span class="num">۳</span>گردش‌کار VCNO</span><span>فصل ۳</span></li>
+    <li><span><span class="num">۴</span>مرحله‌ی /init</span><span>فصل ۴</span></li>
+    <li><span><span class="num">۵</span>مرحله‌ی /check</span><span>فصل ۵</span></li>
+    <li><span><span class="num">۶</span>مرحله‌ی /PRD</span><span>فصل ۶</span></li>
+    <li><span><span class="num">۷</span>مرحله‌ی /Build</span><span>فصل ۷</span></li>
+    <li><span><span class="num">۸</span>مرحله‌ی /Feedback</span><span>فصل ۸</span></li>
+    <li><span><span class="num">۹</span>مرحله‌ی /Doc</span><span>فصل ۹</span></li>
+    <li><span><span class="num">۱۰</span>استفاده در یک پروژه‌ی واقعی</span><span>فصل ۱۰</span></li>
+    <li><span><span class="num">۱۱</span>کار با ایجنت‌های کدنویس</span><span>فصل ۱۱</span></li>
+    <li><span><span class="num">۱۲</span>بهترین شیوه‌ها</span><span>فصل ۱۲</span></li>
+    <li><span><span class="num">۱۳</span>اشتباهات رایج</span><span>فصل ۱۳</span></li>
+    <li><span><span class="num">۱۴</span>کِی از VCNO استفاده نکنیم</span><span>فصل ۱۴</span></li>
+    <li><span><span class="num">۱۵</span>محدودیت‌ها</span><span>فصل ۱۵</span></li>
+    <li><span><span class="num">۱۶</span>نسخه‌بندی و نسخه‌های آینده</span><span>فصل ۱۶</span></li>
+    <li><span><span class="num">۱۷</span>جمع‌بندی</span><span>فصل ۱۷</span></li>
+
+    <li class="part"><span>Part II — English</span><span></span></li>
+    <li><span><span class="num">1</span>Introduction to VCNO</span><span>Chapter 1</span></li>
+    <li><span><span class="num">2</span>Understanding Vibe Coding</span><span>Chapter 2</span></li>
+    <li><span><span class="num">3</span>The VCNO Workflow</span><span>Chapter 3</span></li>
+    <li><span><span class="num">4</span>The /init Skill</span><span>Chapter 4</span></li>
+    <li><span><span class="num">5</span>The /check Skill</span><span>Chapter 5</span></li>
+    <li><span><span class="num">6</span>The /PRD Skill</span><span>Chapter 6</span></li>
+    <li><span><span class="num">7</span>The /Build Skill</span><span>Chapter 7</span></li>
+    <li><span><span class="num">8</span>The /Feedback Skill</span><span>Chapter 8</span></li>
+    <li><span><span class="num">9</span>The /Doc Skill</span><span>Chapter 9</span></li>
+    <li><span><span class="num">10</span>Using VCNO in a Real Project</span><span>Chapter 10</span></li>
+    <li><span><span class="num">11</span>Working With AI Coding Agents</span><span>Chapter 11</span></li>
+    <li><span><span class="num">12</span>Best Practices</span><span>Chapter 12</span></li>
+    <li><span><span class="num">13</span>Common Mistakes</span><span>Chapter 13</span></li>
+    <li><span><span class="num">14</span>When Not to Use VCNO</span><span>Chapter 14</span></li>
+    <li><span><span class="num">15</span>Limitations</span><span>Chapter 15</span></li>
+    <li><span><span class="num">16</span>Versioning and Future Releases</span><span>Chapter 16</span></li>
+    <li><span><span class="num">17</span>Conclusion</span><span>Chapter 17</span></li>
+
+    <li class="part"><span>Appendix</span><span></span></li>
+    <li><span><span class="num">A</span>Document Metadata</span><span>Appendix</span></li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     PART I — PERSIAN
+     ============================================================ -->
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱</span>مقدمه‌ای بر VCNO</h1>
+
+  <h2>VCNO چیست؟</h2>
+  <p>
+    VCNO — یا <strong>Vibe Coding NO</strong> — یک گردش‌کار مرحله‌ای و ساخت‌یافته برای توسعه‌ی نرم‌افزار با کمک هوش مصنوعی است.
+    این سیستم، گفت‌وگو با یک ایجنت کدنویس را از یک «چت آزاد» به یک فرایند مهندسی کنترل‌شده تبدیل می‌کند:
+    ابتدا بررسی، سپس اعتبارسنجی، برنامه‌ریزی، پیاده‌سازی، تکرار و در نهایت مستندسازی.
+  </p>
+  <p>
+    VCNO مجموعه‌ای از <em>مهارت‌های مبتنی بر پرامپت</em> است که مشخص می‌کنند ایجنت در هر مرحله چه کاری
+    <strong>باید</strong> و چه کاری <strong>نباید</strong> انجام دهد. به‌جای اینکه به AI بگویید «کل پروژه را بساز»،
+    کار به شش مرحله‌ی صریح شکسته می‌شود.
+  </p>
+
+  <h2>چرا VCNO به وجود آمد؟</h2>
+  <p>
+    بیشتر توسعه‌های امروزی با AI بدون ساختار هستند: پرامپتی بزرگ فرستاده می‌شود، ایجنت مقدار زیادی کد می‌نویسد،
+    و در نهایت هیچ‌کس مطمئن نیست واقعاً چه چیزی کار می‌کند، چرا تصمیمی گرفته شده، و چه چیزی هنوز ناقص است.
+    VCNO برای حل این مشکل طراحی شده است.
+  </p>
+
+  <h2>مشکل Vibe Coding کنترل‌نشده</h2>
+  <ul>
+    <li>از دست رفتن زمینه بین گفت‌وگوها</li>
+    <li>تولید کد تکراری یا متناقض</li>
+    <li>افزودن بی‌رویه‌ی وابستگی‌ها</li>
+    <li>گسترش کنترل‌نشده‌ی دامنه (Scope Creep)</li>
+    <li>تغییرات مستندنشده</li>
+    <li>ادعای موفقیت بدون تأیید واقعی</li>
+    <li>ناتوانی در نگهداری پروژه در بلندمدت</li>
+  </ul>
+
+  <h2>فلسفه‌ی VCNO</h2>
+  <div class="callout">
+    <span class="label">اصل بنیادین</span>
+    <p>قبل از تغییر بفهم. قبل از برنامه‌ریزی اعتبارسنجی کن. قبل از ساخت برنامه‌ریزی کن. قبل از ادعا تأیید کن. واقعیت را مستند کن، نه نیت را.</p>
+  </div>
+
+  <p>VCNO با AI مثل یک دستیار مهندسی رفتار می‌کند، نه یک تولیدکننده‌ی کد بی‌کنترل. توسعه‌دهنده کنترل را در دست دارد و AI درون یک فرایند مشخص عمل می‌کند.</p>
+
+  <h2>VCNO چه چیزی را بهبود می‌دهد؟</h2>
+  <ul>
+    <li>حفظ زمینه بین مراحل</li>
+    <li>شفافیت تصمیم‌ها</li>
+    <li>قابلیت بازتولید نتایج</li>
+    <li>کاهش دوباره‌کاری</li>
+    <li>مستندسازی هم‌راستا با واقعیت</li>
+    <li>کاهش ریسک تغییرات مخرب</li>
+  </ul>
+
+  <h2>همکاری انسان و AI</h2>
+  <p>
+    در VCNO، AI یک دستیار است — نه یک مرجع بی‌خطا. تصمیم‌های مهم توسط انسان گرفته می‌شوند،
+    و AI در چارچوب مشخصی که خود انسان تعیین کرده عمل می‌کند.
+  </p>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۲</span>درک Vibe Coding</h1>
+
+  <h2>Vibe Coding چیست؟</h2>
+  <p>
+    Vibe Coding یعنی ساختن نرم‌افزار با تکیه بر توصیف طبیعی و تکرار سریع، به‌جای نوشتن دقیق همه‌ی جزئیات از پیش.
+    در این سبک، توسعه‌دهنده «حال‌وهوای» محصول را توصیف می‌کند و AI کد را می‌نویسد.
+  </p>
+
+  <h2>چرا محبوب شد؟</h2>
+  <ul>
+    <li>سرعت بالا در ساخت نمونه‌ی اولیه</li>
+    <li>کاهش موانع فنی برای ایده‌پردازی</li>
+    <li>امکان تکرار سریع بر اساس بازخورد</li>
+    <li>دسترسی به کمک AI در هر مرحله</li>
+  </ul>
+
+  <h2>مزایا</h2>
+  <ul>
+    <li>رسیدن سریع‌تر از ایده به کد کارآمد</li>
+    <li>کاهش کارهای تکراری</li>
+    <li>یادگیری سریع‌تر برای تازه‌کارها</li>
+  </ul>
+
+  <h2>ریسک‌ها</h2>
+  <ul>
+    <li><strong>از دست رفتن زمینه:</strong> AI چیزهایی را که قبلاً می‌دانست فراموش می‌کند.</li>
+    <li><strong>توهم (Hallucination):</strong> تولید API یا رفتارهای خیالی.</li>
+    <li><strong>کد تکراری:</strong> پیاده‌سازی دوباره‌ی چیزی که وجود دارد.</li>
+    <li><strong>وابستگی‌های کنترل‌نشده:</strong> افزودن پکیج‌های غیرضروری.</li>
+    <li><strong>گسترش دامنه:</strong> افزودن قابلیت‌های خارج از محدوده.</li>
+    <li><strong>تغییرات مستندنشده:</strong> کدی که کسی دلیلش را نمی‌داند.</li>
+    <li><strong>پیاده‌سازی تأییدنشده:</strong> ادعای موفقیت بدون تست.</li>
+  </ul>
+
+  <h2>VCNO چگونه ساختار می‌دهد؟</h2>
+  <p>
+    VCNO این ریسک‌ها را با تقسیم کار به مراحل صریح و مرزهای سخت کاهش می‌دهد.
+    هر مرحله تنها یک مسئولیت دارد و نمی‌تواند وظایف مرحله‌ی دیگری را تصاحب کند.
+  </p>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۳</span>گردش‌کار VCNO</h1>
+
+  <p>VCNO از شش مرحله تشکیل شده است که به‌ترتیب اجرا می‌شوند. هر مرحله خروجی مرحله‌ی قبل را مصرف می‌کند.</p>
+
+  <div class="workflow">
+    <div class="step"><span class="name">/init</span><span class="desc">درک پروژه و زمینه</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/check</span><span class="desc">اعتبارسنجی نیازمندی‌ها</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/PRD</span><span class="desc">برنامه‌ریزی محصول و فنی</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/Build</span><span class="desc">پیاده‌سازی و تأیید</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/Feedback</span><span class="desc">تکرار کنترل‌شده</span></div>
+    <div class="loop">↺ بازگشت به /Build یا /PRD در صورت نیاز</div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/Doc</span><span class="desc">مستندسازی واقعیت</span></div>
+  </div>
+
+  <h2>مسئولیت هر مرحله</h2>
+  <table>
+    <thead>
+      <tr><th>مرحله</th><th>مسئولیت</th><th>نباید</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>/init</code></td><td>درک پروژه و تولید سند زمینه</td><td>نوشتن کد، نصب، بازآرایی، حذف</td></tr>
+      <tr><td><code>/check</code></td><td>اعتبارسنجی ایده، نیازمندی‌ها و ریسک‌ها</td><td>پیاده‌سازی، طراحی معماری کامل</td></tr>
+      <tr><td><code>/PRD</code></td><td>تولید نقشه‌ی محصول و فنی</td><td>پیاده‌سازی، نصب، مهندسی بیش‌ازحد</td></tr>
+      <tr><td><code>/Build</code></td><td>پیاده‌سازی تدریجی و تأیید</td><td>ساختن نیازمندی جدید، بازنویسی کد کارآمد</td></tr>
+      <tr><td><code>/Feedback</code></td><td>تکرار کنترل‌شده و رفع باگ</td><td>گسترش بی‌صدای دامنه، جایگزینی برنامه‌ریزی</td></tr>
+      <tr><td><code>/Doc</code></td><td>هم‌راستاسازی مستندات با واقعیت</td><td>پیاده‌سازی قابلیت ناقص، پنهان‌کردن شکاف‌ها</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">نکته</span>
+    <p>VCNO یک پکیج اجرایی نیست. این سیستم درون یک ایجنت کدنویس سازگار استفاده می‌شود و هر مرحله با فراخوانی نام آن (مثلاً <code>/init</code>) شروع می‌شود.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۴</span>مرحله‌ی <code>/init</code></h1>
+
+  <h2>هدف</h2>
+  <p>درک پروژه پیش از هرگونه تغییر. این مرحله اولین قدم در VCNO است و باید قبل از هر برنامه‌ریزی یا پیاده‌سازی اجرا شود.</p>
+
+  <h2>چه زمانی استفاده می‌شود؟</h2>
+  <ul>
+    <li>شروع یک پروژه‌ی جدید از یک ایده</li>
+    <li>ورود به یک کدبیس موجود</li>
+    <li>راه‌اندازی مجدد VCNO پس از یک تغییر بزرگ</li>
+    <li>آماده‌سازی زمینه برای <code>/check</code></li>
+  </ul>
+
+  <h2>چه چیزی را بررسی می‌کند؟</h2>
+  <ul>
+    <li>ساختار مخزن و پوشه‌های مهم</li>
+    <li>فایل‌های وابستگی و پیکربندی</li>
+    <li>مستندات موجود (README، docs/)</li>
+    <li>دارایی‌ها (تصاویر، طراحی، PDF، schema)</li>
+    <li>وضعیت Git (شاخه، تغییرات، commits اخیر)</li>
+    <li>استک فنی قابل مشاهده</li>
+  </ul>
+
+  <h2>چه چیزی را مستند می‌کند؟</h2>
+  <ul>
+    <li><code>docs/project.md</code> — سند زمینه‌ی پروژه</li>
+    <li><code>docs/logs/init.md</code> — گزارش اجرای مرحله</li>
+    <li>ساختار مستندات در صورت نبودن</li>
+  </ul>
+
+  <h2>چه کاری نباید انجام دهد؟</h2>
+  <div class="callout warn">
+    <span class="label">ممنوع</span>
+    <ul>
+      <li>نوشتن یا تولید کد</li>
+      <li>نصب وابستگی</li>
+      <li>بازآرایی یا بازسازی ساختار</li>
+      <li>حذف فایل‌های کاربر</li>
+      <li>ریست کردن Git یا دور ریختن تغییرات کاربر</li>
+      <li>کپی کردن مقادیر رمز یا توکن در مستندات</li>
+      <li>شروع پیاده‌سازی</li>
+    </ul>
+  </div>
+
+  <h2>نتیجه‌ی مورد انتظار</h2>
+  <p>یک سند زمینه‌ی روشن که تفاوت میان «تأییدشده»، «استنباط‌شده»، «ناشناخته» و «نیاز به توضیح» را حفظ کرده باشد.</p>
+
+  <h2>نمونه‌ی تعامل</h2>
+  <pre><code>کاربر: /init
+
+ایجنت:
+  - مخزن را بررسی می‌کند
+  - استک را تشخیص می‌دهد
+  - مستندات و دارایی‌ها را فهرست می‌کند
+  - docs/project.md و docs/logs/init.md را می‌نویسد
+  - وضعیت را گزارش می‌دهد: INIT_COMPLETED
+  - مرحله‌ی بعد را پیشنهاد می‌دهد: /check</code></pre>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۵</span>مرحله‌ی <code>/check</code></h1>
+
+  <h2>هدف</h2>
+  <p>اعتبارسنجی ایده، نیازمندی‌ها، محدودیت‌ها، فرض‌ها، امکان‌سنجی، ریسک‌ها و اطلاعات ناقص پیش از شروع <code>/PRD</code>.</p>
+
+  <div class="callout">
+    <span class="label">پرسش محوری</span>
+    <p>«آیا آن‌قدر می‌فهمیم چه می‌سازیم که بتوانیم یک PRD قابل‌اعتماد تولید کنیم؟»</p>
+  </div>
+
+  <h2>ابعاد اعتبارسنجی</h2>
+  <ul>
+    <li>شفافیت و سازگاری نیازمندی‌ها</li>
+    <li>قابلیت آزمون‌پذیری</li>
+    <li>تناقض‌ها میان نیازمندی‌ها</li>
+    <li>گسترش دامنه</li>
+    <li>فرض‌های پنهان</li>
+    <li>ریسک‌های فنی و محصولی</li>
+    <li>ناشناخته‌ها و نیازمندی‌های مبهم</li>
+  </ul>
+
+  <h2>طبقه‌بندی نیازمندی‌ها</h2>
+  <table>
+    <thead><tr><th>دسته</th><th>توضیح</th></tr></thead>
+    <tbody>
+      <tr><td>Must Have</td><td>ضروری برای نسخه‌ی اول</td></tr>
+      <tr><td>Should Have</td><td>مهم ولی قابل تعویق</td></tr>
+      <tr><td>Could Have</td><td>خوب است داشته باشیم</td></tr>
+      <tr><td>Out of Scope</td><td>خارج از دامنه‌ی فعلی</td></tr>
+      <tr><td>Unknown</td><td>نیازمند اطلاعات بیشتر</td></tr>
+    </tbody>
+  </table>
+
+  <h2>وضعیت‌های آمادگی</h2>
+  <table>
+    <thead><tr><th>وضعیت</th><th>معنا</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NOT READY</strong></td><td>نیازمندی‌های حیاتی حل نشده‌اند</td></tr>
+      <tr><td><strong>READY WITH WARNINGS</strong></td><td>می‌توان پیش رفت، ولی عدم‌قطعیت‌های غیرمسدودکننده وجود دارد</td></tr>
+      <tr><td><strong>READY FOR PRD</strong></td><td>محصول و جهت فنی به‌قدر کافی روشن هستند</td></tr>
+    </tbody>
+  </table>
+
+  <h2>چه کاری نباید انجام دهد؟</h2>
+  <div class="callout warn">
+    <span class="label">ممنوع</span>
+    <ul>
+      <li>پیاده‌سازی یا طراحی معماری کامل</li>
+      <li>حل بی‌صدای ابهام مهم</li>
+      <li>تبدیل فرض به واقعیت</li>
+      <li>پرسیدن ده‌ها سؤال بدون اولویت</li>
+      <li>گسترش دامنه به‌جای طبقه‌بندی آن</li>
+    </ul>
+  </div>
+
+  <h2>نتیجه‌ی مورد انتظار</h2>
+  <p>گزارشی شامل نیازمندی‌های تأییدشده، دامنه‌ی MVP، ریسک‌ها، تناقض‌ها، ناشناخته‌ها و وضعیت آمادگی برای <code>/PRD</code>.</p>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۶</span>مرحله‌ی <code>/PRD</code></h1>
+
+  <h2>هدف</h2>
+  <p>تبدیل فهم معتبر از مراحل پیشین به یک نقشه‌ی آماده‌ی پیاده‌سازی برای <code>/Build</code>.</p>
+
+  <div class="callout">
+    <span class="label">پرسش محوری</span>
+    <p>«دقیقاً چه می‌سازیم، چگونه کار می‌کند، و <code>/Build</code> چه چیزی را باید پیاده کند؟»</p>
+  </div>
+
+  <h2>خروجی‌های PRD</h2>
+  <ul>
+    <li>تعریف محصول: هدف، مشکل، کاربران هدف، راه‌حل</li>
+    <li>نیازمندی‌های کارکردی و غیرکارکردی</li>
+    <li>جریان‌های کاربری</li>
+    <li>الزامات UI/UX (در صورت وجود)</li>
+    <li>معماری فنی</li>
+    <li>استک فناوری</li>
+    <li>طراحی پایگاه داده</li>
+    <li>طراحی API</li>
+    <li>احراز هویت و مجوزدهی</li>
+    <li>الزامات امنیتی</li>
+    <li>نیازمندی‌های AI/ML (در صورت وجود)</li>
+    <li>مدیریت خطا</li>
+    <li>حالت‌ها و منطق کسب‌وکار</li>
+    <li>ساختار پروژه و وابستگی‌ها</li>
+    <li>استراتژی تست</li>
+    <li>معیارهای پذیرش</li>
+    <li>برنامه‌ی پیاده‌سازی و ترتیب ساخت</li>
+    <li>تعریف Done</li>
+  </ul>
+
+  <h2>وضعیت‌های تأیید</h2>
+  <table>
+    <thead><tr><th>وضعیت</th><th>معنا</th></tr></thead>
+    <tbody>
+      <tr><td><strong>DRAFT</strong></td><td>PRD ناقص است</td></tr>
+      <tr><td><strong>NEEDS CLARIFICATION</strong></td><td>تصمیم‌ها یا نیازمندی‌های مهم حل نشده‌اند</td></tr>
+      <tr><td><strong>READY FOR BUILD</strong></td><td>برنامه‌ی پیاده‌سازی به‌قدر کافی روشن است</td></tr>
+    </tbody>
+  </table>
+
+  <h2>چه کاری نباید انجام دهد؟</h2>
+  <div class="callout warn">
+    <span class="label">ممنوع</span>
+    <ul>
+      <li>پیاده‌سازی یا نصب وابستگی</li>
+      <li>تغییر بی‌صدای استک فناوری موجود</li>
+      <li>مهندسی بیش‌ازحد (microservices، K8s، ... بدون توجیه)</li>
+      <li>ادعای موفقیت تست بدون اجرا</li>
+      <li>جایگزینی وظایف <code>/check</code></li>
+    </ul>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۷</span>مرحله‌ی <code>/Build</code></h1>
+
+  <h2>هدف</h2>
+  <p>پیاده‌سازی برنامه‌ی تأییدشده و تبدیل آن به نرم‌افزار کارآمد و تأییدشده.</p>
+
+  <div class="callout">
+    <span class="label">پرسش محوری</span>
+    <p>«چگونه برنامه‌ی تأییدشده را به‌درستی، ایمن و قابل‌تأیید پیاده کنیم؟»</p>
+  </div>
+
+  <h2>ورودی‌ها</h2>
+  <ul>
+    <li>خروجی <code>/init</code></li>
+    <li>خروجی <code>/check</code></li>
+    <li>PRD</li>
+    <li>وضعیت فعلی مخزن و Git</li>
+  </ul>
+
+  <h2>مراحل اجرا</h2>
+  <ol>
+    <li>بارگذاری زمینه‌ی پیشین</li>
+    <li>دروازه‌ی آمادگی ساخت</li>
+    <li>بررسی وضعیت Git</li>
+    <li>درک کد موجود پیش از هر تغییر</li>
+    <li>تقسیم کار به فازهای معنادار</li>
+    <li>پیاده‌سازی تدریجی هر فاز</li>
+    <li>تست و تأیید در پایان هر فاز</li>
+    <li>نقاط ذخیره‌ی Git</li>
+    <li>گزارش وضعیت نهایی</li>
+  </ol>
+
+  <h2>وضعیت‌های پایان</h2>
+  <table>
+    <thead><tr><th>وضعیت</th><th>معنا</th></tr></thead>
+    <tbody>
+      <tr><td><strong>COMPLETE</strong></td><td>همه‌ی معیارهای Done برآورده شده‌اند</td></tr>
+      <tr><td><strong>PARTIAL</strong></td><td>بخشی پیاده‌سازی شده ولی همه‌ی معیارها برآورده نشده‌اند</td></tr>
+      <tr><td><strong>BLOCKED</strong></td><td>پیشرفت مسدود شده است</td></tr>
+    </tbody>
+  </table>
+
+  <h2>چه کاری نباید انجام دهد؟</h2>
+  <div class="callout warn">
+    <span class="label">ممنوع</span>
+    <ul>
+      <li>شروع بدون PRD یا با PRD ناقص</li>
+      <li>بازنویسی معماری کارآمد با معماری دلخواه</li>
+      <li>ساختن نیازمندی جدید</li>
+      <li>افزودن وابستگی به‌صرف راحتی</li>
+      <li>ادعای موفقیت بدون تأیید واقعی</li>
+      <li>جذب مسئولیت‌های <code>/Feedback</code></li>
+      <li>گزارش PARTIAL به‌عنوان COMPLETE</li>
+    </ul>
+  </div>
+
+  <h2>نمونه‌ی چرخه</h2>
+  <pre><code>کاربر: /Build
+
+ایجنت:
+  - PRD را می‌خواند
+  - Git را بررسی می‌کند
+  - فازها را اجرا می‌کند
+  - در پایان هر فاز تست می‌کند
+  - در صورت نیاز checkpoint می‌سازد
+  - گزارش نهایی می‌دهد: COMPLETE / PARTIAL / BLOCKED</code></pre>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۸</span>مرحله‌ی <code>/Feedback</code></h1>
+
+  <h2>هدف</h2>
+  <p>تبدیل بازخورد کاربر یا رفتار مشاهده‌شده‌ی پروژه به بهبودهای معتبر، با کنترل دامنه و محافظت در برابر Regression.</p>
+
+  <div class="callout">
+    <span class="label">پرسش محوری</span>
+    <p>«کاربر دقیقاً چه چیزی را می‌خواهد تغییر دهد، چرا، چه چیزی تحت‌تأثیر قرار می‌گیرد، و چگونه بدون شکستن بقیه‌ی پروژه این تغییر را اعمال کنیم؟»</p>
+  </div>
+
+  <h2>چرخه‌ی تکرار</h2>
+  <div class="inline-flow">
+    <span class="n">Feedback</span><span class="a">→</span>
+    <span class="n">Understand</span><span class="a">→</span>
+    <span class="n">Classify</span><span class="a">→</span>
+    <span class="n">Impact</span><span class="a">→</span>
+    <span class="n">Plan</span><span class="a">→</span>
+    <span class="n">Implement</span><span class="a">→</span>
+    <span class="n">Test</span><span class="a">→</span>
+    <span class="n">Verify</span><span class="a">→</span>
+    <span class="n">Document</span>
+  </div>
+
+  <h2>طبقه‌بندی بازخورد</h2>
+  <ul>
+    <li>Bug</li>
+    <li>Feature Request</li>
+    <li>UX Improvement</li>
+    <li>UI Change</li>
+    <li>Performance</li>
+    <li>Security</li>
+    <li>Data Issue</li>
+    <li>Business Logic</li>
+    <li>Technical Debt</li>
+    <li>Documentation</li>
+  </ul>
+
+  <h2>وضعیت‌های آیتم بازخورد</h2>
+  <table>
+    <thead><tr><th>وضعیت</th><th>معنا</th></tr></thead>
+    <tbody>
+      <tr><td>NEW / ANALYZING</td><td>در حال بررسی</td></tr>
+      <tr><td>NEEDS CLARIFICATION</td><td>نیازمند توضیح بیشتر</td></tr>
+      <tr><td>PLANNED / IN PROGRESS</td><td>در حال برنامه‌ریزی یا اجرا</td></tr>
+      <tr><td>TESTING / VERIFIED</td><td>در حال تست یا تأییدشده</td></tr>
+      <tr><td>BLOCKED / DEFERRED / REJECTED</td><td>مسدود، به‌تعویق‌افتاده، یا رد‌شده با دلیل</td></tr>
+    </tbody>
+  </table>
+
+  <h2>چه زمانی به <code>/check</code> برگردیم؟</h2>
+  <p>
+    اگر بازخورد به یک تغییر بزرگ محصولی یا معماری منجر شود (مثلاً «بیایید این را به یک مارکت‌پلیس تبدیل کنیم»)،
+    این مورد باید از طریق <code>/check</code> → <code>/PRD</code> → <code>/Build</code> دوباره برنامه‌ریزی شود.
+    <code>/Feedback</code> نباید بی‌صدا جای برنامه‌ریزی محصول را بگیرد.
+  </p>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۹</span>مرحله‌ی <code>/Doc</code></h1>
+
+  <h2>هدف</h2>
+  <p>هم‌راستاسازی مستندات با پیاده‌سازی واقعی و ارزیابی آمادگی تحویل یا انتشار.</p>
+
+  <div class="callout">
+    <span class="label">اصل بنیادین</span>
+    <p>واقعیت را مستند کن، نه نیت را.</p>
+  </div>
+
+  <h2>خروجی‌های مستندسازی</h2>
+  <ul>
+    <li>README</li>
+    <li>نصب و پیکربندی</li>
+    <li>متغیرهای محیطی</li>
+    <li>معماری</li>
+    <li>ساختار پروژه</li>
+    <li>API</li>
+    <li>پایگاه داده</li>
+    <li>احراز هویت</li>
+    <li>استقرار</li>
+    <li>تست</li>
+    <li>عیب‌یابی</li>
+    <li>محدودیت‌های شناخته‌شده</li>
+    <li>وضعیت قابلیت‌ها</li>
+  </ul>
+
+  <h2>تفکیک مستندسازی از تأیید</h2>
+  <p>
+    «پیکربندی استقرار وجود دارد» با «استقرار با موفقیت تست شده» یکی نیست.
+    <code>/Doc</code> باید همیشه میان «مستندشده»، «تأییدشده»، «تأییدنشده» و «ناشناخته» تفاوت قائل شود.
+  </p>
+
+  <h2>وضعیت نهایی پروژه</h2>
+  <table>
+    <thead><tr><th>وضعیت</th><th>معنا</th></tr></thead>
+    <tbody>
+      <tr><td>DOCUMENTED</td><td>مستندات با واقعیت هم‌راستا هستند</td></tr>
+      <tr><td>READY FOR HANDOFF</td><td>توسعه‌دهنده‌ی دیگر می‌تواند پروژه را بفهمد و اجرا کند</td></tr>
+      <tr><td>READY FOR RELEASE</td><td>همه‌ی معیارهای انتشار برآورده شده‌اند</td></tr>
+      <tr><td>PARTIALLY DOCUMENTED</td><td>مستندسازی ناقص</td></tr>
+      <tr><td>BLOCKED</td><td>مسدود</td></tr>
+    </tbody>
+  </table>
+
+  <h2>چه کاری نباید انجام دهد؟</h2>
+  <div class="callout warn">
+    <span class="label">ممنوع</span>
+    <ul>
+      <li>پیاده‌سازی قابلیت‌های ناقص</li>
+      <li>پنهان‌کردن شکاف‌ها</li>
+      <li>ادعای آمادگی انتشار بدون شواهد</li>
+      <li>کپی کردن رمزها در مستندات</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۰</span>استفاده در یک پروژه‌ی واقعی</h1>
+
+  <h2>سناریو</h2>
+  <p>یک توسعه‌دهنده می‌خواهد یک اپلیکیشن وب مبتنی بر AI بسازد که به فروشندگان کمک کند پیام‌های مشتریان را تحلیل کنند و دلیل عدم خرید را بفهمند.</p>
+
+  <h2>مسیر پیشنهادی</h2>
+  <ol>
+    <li><strong>ایده:</strong> توسعه‌دهنده ایده را با زبان طبیعی توصیف می‌کند.</li>
+    <li><strong><code>/init</code>:</strong> ایجنت مخزن را بررسی می‌کند (احتمالاً خالی است) و زمینه را می‌نویسد.</li>
+    <li><strong><code>/check</code>:</strong> نیازمندی‌ها، ابهام‌ها و ریسک‌ها اعتبارسنجی می‌شوند. مثلاً: «تحلیل AI دقیقاً چه چیزی را استخراج می‌کند؟»</li>
+    <li><strong><code>/PRD</code>:</strong> نقشه‌ی محصول و فنی تولید می‌شود — مدل داده، API، جریان‌های کاربری، تست.</li>
+    <li><strong><code>/Build</code>:</strong> پیاده‌سازی تدریجی: اسکیمای پایگاه داده، API، احراز هویت، رابط کاربری، تست.</li>
+    <li><strong><code>/Feedback</code>:</strong> بازخورد کاربر (مثلاً «کارت‌ها خیلی فشرده‌اند») به تغییرات هدفمند تبدیل می‌شود.</li>
+    <li><strong><code>/Doc</code>:</strong> مستندات نهایی هم‌راستا با واقعیت پروژه نوشته می‌شوند.</li>
+  </ol>
+
+  <h2>نمونه‌ی تعامل</h2>
+  <pre><code>کاربر: می‌خواهم اپلیکیشنی بسازم که به فروشندگان کمک کند
+       پیام‌های مشتریان را تحلیل کنند و دلیل عدم خرید را بفهمند.
+
+کاربر: /init
+کاربر: /check
+کاربر: /PRD
+کاربر: /Build
+کاربر: /Feedback
+کاربر: /Doc</code></pre>
+
+  <div class="callout">
+    <span class="label">نکته</span>
+    <p>دستورات بالا «نام مراحل» هستند، نه دستورات ترمینال. VCNO یک پکیج CLI نیست؛ این نام‌ها مهارت‌هایی هستند که داخل ایجنت کدنویس فراخوانی می‌شوند.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۱</span>کار با ایجنت‌های کدنویس</h1>
+
+  <h2>VCNO و ابزارهای ایجنت</h2>
+  <p>VCNO مستقل از ابزار است. مخزن از طریق فایل‌های ورودی بومی هر ابزار به همان منبع واحد اشاره می‌کند:</p>
+
+  <table>
+    <thead><tr><th>ابزار</th><th>فایل ورودی</th><th>اشاره به</th></tr></thead>
+    <tbody>
+      <tr><td>Codex, Cursor, Zed, Amp, …</td><td><code>AGENTS.md</code></td><td>منبع اصلی</td></tr>
+      <tr><td>Claude Code</td><td><code>CLAUDE.md</code> + <code>.claude/skills/*/SKILL.md</code></td><td><code>AGENTS.md</code> + <code>skills/</code></td></tr>
+      <tr><td>GitHub Copilot</td><td><code>.github/copilot-instructions.md</code></td><td><code>AGENTS.md</code></td></tr>
+      <tr><td>Gemini CLI</td><td><code>GEMINI.md</code></td><td><code>AGENTS.md</code></td></tr>
+      <tr><td>Windsurf</td><td><code>.windsurfrules</code></td><td><code>AGENTS.md</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>مسئولیت انسان</h2>
+  <ul>
+    <li>تعیین هدف و دامنه‌ی پروژه</li>
+    <li>پاسخ به سؤالات مبهم</li>
+    <li>تأیید PRD پیش از شروع ساخت</li>
+    <li>تصمیم‌های مهم معماری و محصولی</li>
+    <li>بازبینی نتایج و بازخورد</li>
+  </ul>
+
+  <h2>مسئولیت AI</h2>
+  <ul>
+    <li>بررسی و درک پروژه</li>
+    <li>اعتبارسنجی نیازمندی‌ها و طرح سؤال</li>
+    <li>تولید PRD</li>
+    <li>پیاده‌سازی تدریجی و تست</li>
+    <li>پردازش بازخورد</li>
+    <li>مستندسازی واقعیت</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">هشدار</span>
+    <p>AI را مرجع بی‌خطا ندانید. VCNO جای قضاوت مهندسی انسان را نمی‌گیرد؛ هدف، ساختاریافته‌کردن کمک AI است.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۲</span>بهترین شیوه‌ها</h1>
+
+  <h2>اصول عملی</h2>
+  <ul>
+    <li>قبل از تغییر بفهم.</li>
+    <li>قبل از ساختن بررسی کن.</li>
+    <li>قبل از تکرار، دوباره استفاده کن.</li>
+    <li>وقتی نیازمندی روشن نیست، بپرس.</li>
+    <li>قبل از ادعای موفقیت، تأیید کن.</li>
+    <li>دامنه را کنترل کن.</li>
+    <li>کار موجود را حفظ کن.</li>
+    <li>تغییرات معنادار را تست کن.</li>
+    <li>واقعیت را مستند کن.</li>
+    <li>از نقاط ذخیره‌ی Git استفاده کن.</li>
+    <li>انسان را در تصمیم‌های مهم دخیل نگه دار.</li>
+  </ul>
+
+  <h2>در طول گردش‌کار</h2>
+  <ul>
+    <li>هر مرحله را کامل کنید قبل از رفتن به مرحله‌ی بعد.</li>
+    <li>خروجی‌های هر مرحله را به‌عنوان منبع رسمی در نظر بگیرید.</li>
+    <li>از بازگشت به مرحله‌ی قبل نترسید اگر اطلاعات جدید ظاهر شد.</li>
+  </ul>
+
+  <h2>در کار با AI</h2>
+  <ul>
+    <li>به AI به‌عنوان دستیار نگاه کنید، نه مرجع.</li>
+    <li>از آن بخواهید شواهد تصمیم‌ها را ثبت کند.</li>
+    <li>ادعاهای «کار می‌کند» را بدون تأیید نپذیرید.</li>
+  </ul>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۳</span>اشتباهات رایج</h1>
+
+  <ul>
+    <li>درخواست از AI برای ساختن همه‌چیز به‌صورت یک‌باره.</li>
+    <li>رد کردن مرحله‌ی اعتبارسنجی نیازمندی‌ها.</li>
+    <li>رد کردن مرحله‌ی برنامه‌ریزی.</li>
+    <li>اجازه دادن به گسترش دامنه.</li>
+    <li>اعتماد به کد تولیدشده بدون تست.</li>
+    <li>بازسازی قابلیت‌هایی که از قبل وجود دارند.</li>
+    <li>نادیده‌گرفتن معماری موجود.</li>
+    <li>افزودن وابستگی‌های غیرضروری.</li>
+    <li>فراموش‌کردن مستندسازی.</li>
+    <li>مخلوط‌کردن بازخوردهای نامرتبط.</li>
+    <li>تغییرات بزرگ بدون نقاط ذخیره.</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">یادآوری</span>
+    <p>هر یک از این اشتباهات در واقع معادل «پریدن از روی یک مرحله از VCNO» است. اگر مرحله‌ای را رد کنید، ضعف‌های آن مرحله دیر یا زود ظاهر می‌شوند.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۴</span>کِی از VCNO استفاده نکنیم</h1>
+
+  <p>VCNO برای پروژه‌هایی طراحی شده که به ساختار، زمینه و مستندسازی نیاز دارند. در موارد زیر ممکن است لازم نباشد:</p>
+
+  <ul>
+    <li>اسکریپت‌های کوچک یک‌باره</li>
+    <li>آزمایش‌های سریع و دورانداختنی</li>
+    <li>نمونه‌های اولیه‌ی بسیار ساده</li>
+    <li>تغییرات بسیار کوچک روی پروژه‌های موجود</li>
+  </ul>
+
+  <div class="callout">
+    <span class="label">نکته</span>
+    <p>این بستگی به پیچیدگی پروژه دارد. اگر پروژه در حال رشد است یا باید نگهداری شود، VCNO مفید می‌شود — حتی اگر در ابتدا ساده به‌نظر برسد.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۵</span>محدودیت‌ها</h1>
+
+  <p>VCNO صادقانه محدودیت‌های خود را می‌پذیرد:</p>
+
+  <ul>
+    <li>تضمین نرم‌افزار بدون باگ نمی‌دهد.</li>
+    <li>توهم‌های AI را حذف نمی‌کند.</li>
+    <li>جای تست را نمی‌گیرد.</li>
+    <li>جای تصمیم‌های انسانی را نمی‌گیرد.</li>
+    <li>امنیت را تضمین نمی‌کند.</li>
+    <li>نیازمندی‌های مبهم را به‌طور خودکار نمی‌فهمد.</li>
+    <li>آمادگی برای تولید را تضمین نمی‌کند.</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">مهم</span>
+    <p>VCNO یک چارچوب انسانی است که AI را کنترل می‌کند. موفقیت آن به کیفیت قضاوت انسان و پیگیری منظم بستگی دارد.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۶</span>نسخه‌بندی و نسخه‌های آینده</h1>
+
+  <h2>نسخه‌ی فعلی</h2>
+  <p>این مستندات <strong>VCNO v1.0</strong> را توصیف می‌کند.</p>
+
+  <h2>نسخه‌های آینده</h2>
+  <p>
+    نسخه‌های آینده ممکن است مهارت‌های جدید، بهبود گردش‌کار یا تغییرات مستندات را معرفی کنند.
+    هیچ قابلیت مشخصی برای آینده تضمین نمی‌شود.
+  </p>
+
+  <h2>مخزن رسمی</h2>
+  <p>
+    برای آخرین نسخه و به‌روزرسانی‌ها، مخزن رسمی را دنبال کنید:
+    <br>
+    <strong>https://github.com/MRAVLM/VCNO</strong>
+  </p>
+
+  <div class="callout">
+    <span class="label">توجه</span>
+    <p>این مستندات به‌طور خودکار به‌روزرسانی نمی‌شود. برای اطلاع از آخرین وضعیت، به مخزن مراجعه کنید.</p>
+  </div>
+</section>
+
+<section class="page fa">
+  <h1 class="chapter"><span class="num">فصل ۱۷</span>جمع‌بندی</h1>
+
+  <p>هدف VCNO این نیست که AI همه‌چیز را بنویسد.</p>
+  <p>هدف این است که به AI یک گردش‌کار مهندسی ساخت‌یافته بدهیم و انسان را در کنترل نگه داریم.</p>
+
+  <div class="callout ok">
+    <span class="label">فلسفه‌ی نهایی</span>
+    <p>قبل از تغییر بفهم. قبل از برنامه‌ریزی اعتبارسنجی کن. قبل از ساخت برنامه‌ریزی کن. قبل از ادعا تأیید کن. واقعیت را مستند کن، نه نیت را.</p>
+  </div>
+
+  <p>
+    VCNO با AI مثل یک دستیار مهندسی رفتار می‌کند که درون یک فرایند مشخص عمل می‌کند.
+    این سیستم جایگزین قضاوت انسان نمی‌شود؛ ابزاری برای ساختاریافته‌تر کردن کمک AI است.
+  </p>
+</section>
+
+<!-- ============================================================
+     PART II — ENGLISH
+     ============================================================ -->
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 1</span>Introduction to VCNO</h1>
+
+  <h2>What is VCNO?</h2>
+  <p>
+    VCNO — or <strong>Vibe Coding NO</strong> — is a structured, staged workflow for AI-assisted software development.
+    It turns a chat with a coding agent into a controlled engineering process: inspect first, then validate, plan, build, iterate, and document.
+  </p>
+  <p>
+    VCNO is a collection of <em>prompt-based skills</em> that define what an AI coding agent <strong>may</strong> and <strong>may not</strong> do at each stage.
+    Instead of asking an AI to "build this project" in one shot, VCNO breaks the work into six explicit stages.
+  </p>
+
+  <h2>Why VCNO Exists</h2>
+  <p>
+    Most AI-assisted development today is unstructured: the developer pastes a big prompt, the agent writes a lot of code,
+    and nobody is sure what actually works, why decisions were made, or what is still missing. VCNO was designed to solve this.
+  </p>
+
+  <h2>The Problem With Uncontrolled Vibe Coding</h2>
+  <ul>
+    <li>Context is lost between conversations</li>
+    <li>Duplicate or contradictory code is produced</li>
+    <li>Dependencies are added without discipline</li>
+    <li>Scope grows uncontrolled (scope creep)</li>
+    <li>Changes remain undocumented</li>
+    <li>Success is claimed without real verification</li>
+    <li>The project becomes unmaintainable over time</li>
+  </ul>
+
+  <h2>VCNO Philosophy</h2>
+  <div class="callout">
+    <span class="label">Core Principle</span>
+    <p>Understand before changing. Validate before planning. Plan before building. Verify before claiming. Document reality, not intention.</p>
+  </div>
+
+  <p>VCNO treats AI as an engineering assistant inside a controlled process — not as an uncontrolled code generator. The developer stays in control.</p>
+
+  <h2>What VCNO Tries to Improve</h2>
+  <ul>
+    <li>Context preservation across stages</li>
+    <li>Transparency of decisions</li>
+    <li>Reproducibility of results</li>
+    <li>Reduction of rework</li>
+    <li>Documentation aligned with reality</li>
+    <li>Lower risk of destructive changes</li>
+  </ul>
+
+  <h2>Human + AI Collaboration</h2>
+  <p>
+    In VCNO, AI is an assistant — not an infallible authority. Important decisions are made by the human,
+    and AI operates inside a defined framework set by the human.
+  </p>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 2</span>Understanding Vibe Coding</h1>
+
+  <h2>What Is Vibe Coding?</h2>
+  <p>
+    Vibe Coding means building software by describing intent in natural language and iterating quickly,
+    rather than writing every detail precisely up front. In this style, the developer describes the "vibe"
+    of the product, and AI writes the code.
+  </p>
+
+  <h2>Why It Became Popular</h2>
+  <ul>
+    <li>High speed from idea to a first prototype</li>
+    <li>Lower technical barriers for ideation</li>
+    <li>Fast iteration based on feedback</li>
+    <li>AI assistance available at every step</li>
+  </ul>
+
+  <h2>Advantages</h2>
+  <ul>
+    <li>Faster from idea to working code</li>
+    <li>Less repetitive work</li>
+    <li>Faster learning for beginners</li>
+  </ul>
+
+  <h2>Risks</h2>
+  <ul>
+    <li><strong>Context loss:</strong> AI forgets what it previously knew.</li>
+    <li><strong>Hallucination:</strong> invented APIs or behaviors.</li>
+    <li><strong>Duplicate code:</strong> re-implementing what already exists.</li>
+    <li><strong>Uncontrolled dependencies:</strong> adding packages for convenience.</li>
+    <li><strong>Scope creep:</strong> adding features outside the intended scope.</li>
+    <li><strong>Undocumented changes:</strong> code nobody can explain later.</li>
+    <li><strong>Unverified implementation:</strong> claiming success without testing.</li>
+  </ul>
+
+  <h2>How VCNO Provides Structure</h2>
+  <p>
+    VCNO reduces these risks by breaking work into explicit stages with hard boundaries.
+    Each stage has one responsibility and cannot absorb another's job.
+  </p>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 3</span>The VCNO Workflow</h1>
+
+  <p>VCNO consists of six stages executed in order. Each stage consumes the output of the previous one.</p>
+
+  <div class="workflow">
+    <div class="step"><span class="name">/init</span><span class="desc">Understand the project and its context</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/check</span><span class="desc">Validate requirements</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/PRD</span><span class="desc">Plan product and technical blueprint</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/Build</span><span class="desc">Implement and verify</span></div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/Feedback</span><span class="desc">Controlled iteration</span></div>
+    <div class="loop">↺ May loop back to /Build or /PRD when needed</div>
+    <div class="arrow"></div>
+    <div class="step"><span class="name">/Doc</span><span class="desc">Document the real final state</span></div>
+  </div>
+
+  <h2>Responsibility of Each Stage</h2>
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>Responsibility</th><th>Must not</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>/init</code></td><td>Understand the project and write context</td><td>Write code, install, refactor, delete</td></tr>
+      <tr><td><code>/check</code></td><td>Validate idea, requirements, risks</td><td>Implement, design full architecture</td></tr>
+      <tr><td><code>/PRD</code></td><td>Produce the product/technical blueprint</td><td>Implement, install, over-engineer</td></tr>
+      <tr><td><code>/Build</code></td><td>Implement incrementally and verify</td><td>Invent requirements, rewrite working code</td></tr>
+      <tr><td><code>/Feedback</code></td><td>Controlled iteration and bug fixing</td><td>Silently expand scope, replace planning</td></tr>
+      <tr><td><code>/Doc</code></td><td>Reconcile docs with reality</td><td>Implement missing features, hide gaps</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Note</span>
+    <p>VCNO is not an executable package. It is used inside a compatible AI coding agent, and each stage is started by invoking its name (for example <code>/init</code>).</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 4</span>The /init Skill</h1>
+
+  <h2>Purpose</h2>
+  <p>Understand the project before any change. This is the first stage of VCNO and must run before any planning or implementation.</p>
+
+  <h2>When to Use It</h2>
+  <ul>
+    <li>Starting a new project from an idea</li>
+    <li>Onboarding an existing codebase into VCNO</li>
+    <li>Re-initializing after a major shift</li>
+    <li>Preparing context for <code>/check</code></li>
+  </ul>
+
+  <h2>What It Inspects</h2>
+  <ul>
+    <li>Repository structure and important directories</li>
+    <li>Dependency and configuration files</li>
+    <li>Existing documentation (README, docs/)</li>
+    <li>Assets (images, design, PDFs, schemas)</li>
+    <li>Git state (branch, tree, recent commits)</li>
+    <li>Observable technology stack</li>
+  </ul>
+
+  <h2>What It Documents</h2>
+  <ul>
+    <li><code>docs/project.md</code> — central project context</li>
+    <li><code>docs/logs/init.md</code> — stage execution log</li>
+    <li>A documentation structure if none exists</li>
+  </ul>
+
+  <h2>What It Must Not Do</h2>
+  <div class="callout warn">
+    <span class="label">Forbidden</span>
+    <ul>
+      <li>Write or generate code</li>
+      <li>Install dependencies</li>
+      <li>Refactor or restructure</li>
+      <li>Delete user files</li>
+      <li>Reset Git or discard user work</li>
+      <li>Copy secrets or tokens into documentation</li>
+      <li>Start implementation</li>
+    </ul>
+  </div>
+
+  <h2>Expected Result</h2>
+  <p>A clear project context document that keeps Confirmed, Inferred, Unknown, and Needs clarification distinct.</p>
+
+  <h2>Example Interaction</h2>
+  <pre><code>User: /init
+
+Agent:
+  - Inspects the repository
+  - Detects the stack
+  - Lists docs and assets
+  - Writes docs/project.md and docs/logs/init.md
+  - Reports status: INIT_COMPLETED
+  - Suggests next stage: /check</code></pre>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 5</span>The /check Skill</h1>
+
+  <h2>Purpose</h2>
+  <p>Validate the idea, requirements, constraints, assumptions, feasibility, risks, and missing information before <code>/PRD</code> begins.</p>
+
+  <div class="callout">
+    <span class="label">Central Question</span>
+    <p>"Do we understand what we are building well enough to produce a reliable PRD?"</p>
+  </div>
+
+  <h2>Validation Dimensions</h2>
+  <ul>
+    <li>Clarity and consistency of requirements</li>
+    <li>Testability</li>
+    <li>Contradictions between requirements</li>
+    <li>Scope creep</li>
+    <li>Hidden assumptions</li>
+    <li>Technical and product risks</li>
+    <li>Unknowns and ambiguous requirements</li>
+  </ul>
+
+  <h2>Classifying Requirements</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>Must Have</td><td>Required for V1</td></tr>
+      <tr><td>Should Have</td><td>Important but deferrable</td></tr>
+      <tr><td>Could Have</td><td>Nice to have</td></tr>
+      <tr><td>Out of Scope</td><td>Outside current scope</td></tr>
+      <tr><td>Unknown</td><td>Needs more information</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Readiness States</h2>
+  <table>
+    <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NOT READY</strong></td><td>Critical requirements are unresolved</td></tr>
+      <tr><td><strong>READY WITH WARNINGS</strong></td><td>Can proceed, but non-blocking uncertainties exist</td></tr>
+      <tr><td><strong>READY FOR PRD</strong></td><td>Product and technical direction are sufficiently clear</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What It Must Not Do</h2>
+  <div class="callout warn">
+    <span class="label">Forbidden</span>
+    <ul>
+      <li>Implement or design the full architecture</li>
+      <li>Silently resolve important ambiguity</li>
+      <li>Convert assumptions into facts</li>
+      <li>Ask dozens of unprioritized questions</li>
+      <li>Expand scope instead of classifying it</li>
+    </ul>
+  </div>
+
+  <h2>Expected Result</h2>
+  <p>A report covering validated requirements, MVP scope, risks, contradictions, unknowns, and readiness for <code>/PRD</code>.</p>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 6</span>The /PRD Skill</h1>
+
+  <h2>Purpose</h2>
+  <p>Transform validated understanding from prior stages into an implementation-ready blueprint for <code>/Build</code>.</p>
+
+  <div class="callout">
+    <span class="label">Central Question</span>
+    <p>"What exactly are we building, how will it work, and what should <code>/Build</code> implement?"</p>
+  </div>
+
+  <h2>PRD Outputs</h2>
+  <ul>
+    <li>Product definition: purpose, problem, users, solution</li>
+    <li>Functional and non-functional requirements</li>
+    <li>User flows</li>
+    <li>UI/UX requirements (if applicable)</li>
+    <li>Technical architecture</li>
+    <li>Technology stack</li>
+    <li>Database design</li>
+    <li>API design</li>
+    <li>Authentication and authorization</li>
+    <li>Security requirements</li>
+    <li>AI/ML requirements (if applicable)</li>
+    <li>Error handling</li>
+    <li>State and business logic</li>
+    <li>Project structure and dependencies</li>
+    <li>Testing strategy</li>
+    <li>Acceptance criteria</li>
+    <li>Implementation plan and build order</li>
+    <li>Definition of Done</li>
+  </ul>
+
+  <h2>Approval States</h2>
+  <table>
+    <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>DRAFT</strong></td><td>PRD is incomplete</td></tr>
+      <tr><td><strong>NEEDS CLARIFICATION</strong></td><td>Important decisions or requirements unresolved</td></tr>
+      <tr><td><strong>READY FOR BUILD</strong></td><td>Implementation plan is clear enough</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What It Must Not Do</h2>
+  <div class="callout warn">
+    <span class="label">Forbidden</span>
+    <ul>
+      <li>Implement or install dependencies</li>
+      <li>Silently change the existing technology stack</li>
+      <li>Over-engineer (microservices, K8s, … without justification)</li>
+      <li>Claim tests passed without running them</li>
+      <li>Duplicate the responsibilities of <code>/check</code></li>
+    </ul>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 7</span>The /Build Skill</h1>
+
+  <h2>Purpose</h2>
+  <p>Implement the approved plan and turn it into working, verified software.</p>
+
+  <div class="callout">
+    <span class="label">Central Question</span>
+    <p>"How do we implement the approved plan correctly, safely, and verifiably?"</p>
+  </div>
+
+  <h2>Inputs</h2>
+  <ul>
+    <li>Output of <code>/init</code></li>
+    <li>Output of <code>/check</code></li>
+    <li>The PRD</li>
+    <li>Current repository state and Git</li>
+  </ul>
+
+  <h2>Execution Steps</h2>
+  <ol>
+    <li>Load prior context</li>
+    <li>Build readiness gate</li>
+    <li>Inspect Git state</li>
+    <li>Understand existing code before editing</li>
+    <li>Phase the implementation</li>
+    <li>Implement incrementally</li>
+    <li>Test and verify after each phase</li>
+    <li>Create meaningful Git checkpoints</li>
+    <li>Report final status</li>
+  </ol>
+
+  <h2>Completion States</h2>
+  <table>
+    <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>COMPLETE</strong></td><td>All Definition-of-Done criteria satisfied</td></tr>
+      <tr><td><strong>PARTIAL</strong></td><td>Some work implemented, but not all criteria satisfied</td></tr>
+      <tr><td><strong>BLOCKED</strong></td><td>Progress is blocked</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What It Must Not Do</h2>
+  <div class="callout warn">
+    <span class="label">Forbidden</span>
+    <ul>
+      <li>Start without a PRD, or with an incomplete PRD</li>
+      <li>Replace working architecture with preferred architecture</li>
+      <li>Invent new requirements</li>
+      <li>Add dependencies for convenience</li>
+      <li>Claim success without real verification</li>
+      <li>Absorb <code>/Feedback</code> responsibilities</li>
+      <li>Report PARTIAL as COMPLETE</li>
+    </ul>
+  </div>
+
+  <h2>Example Cycle</h2>
+  <pre><code>User: /Build
+
+Agent:
+  - Reads the PRD
+  - Inspects Git
+  - Executes phases
+  - Tests at the end of each phase
+  - Creates checkpoints when appropriate
+  - Reports final status: COMPLETE / PARTIAL / BLOCKED</code></pre>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 8</span>The /Feedback Skill</h1>
+
+  <h2>Purpose</h2>
+  <p>Turn user feedback or observed project behavior into validated improvements, with scope control and regression protection.</p>
+
+  <div class="callout">
+    <span class="label">Central Question</span>
+    <p>"What exactly does the user want changed, why, what does it affect, and how can we change it without breaking the rest of the project?"</p>
+  </div>
+
+  <h2>The Iteration Loop</h2>
+  <div class="inline-flow">
+    <span class="n">Feedback</span><span class="a">→</span>
+    <span class="n">Understand</span><span class="a">→</span>
+    <span class="n">Classify</span><span class="a">→</span>
+    <span class="n">Impact</span><span class="a">→</span>
+    <span class="n">Plan</span><span class="a">→</span>
+    <span class="n">Implement</span><span class="a">→</span>
+    <span class="n">Test</span><span class="a">→</span>
+    <span class="n">Verify</span><span class="a">→</span>
+    <span class="n">Document</span>
+  </div>
+
+  <h2>Classifying Feedback</h2>
+  <ul>
+    <li>Bug</li>
+    <li>Feature Request</li>
+    <li>UX Improvement</li>
+    <li>UI Change</li>
+    <li>Performance</li>
+    <li>Security</li>
+    <li>Data Issue</li>
+    <li>Business Logic</li>
+    <li>Technical Debt</li>
+    <li>Documentation</li>
+  </ul>
+
+  <h2>Feedback Item States</h2>
+  <table>
+    <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>NEW / ANALYZING</td><td>Under review</td></tr>
+      <tr><td>NEEDS CLARIFICATION</td><td>Requires more information</td></tr>
+      <tr><td>PLANNED / IN PROGRESS</td><td>Being planned or executed</td></tr>
+      <tr><td>TESTING / VERIFIED</td><td>Being tested or verified</td></tr>
+      <tr><td>BLOCKED / DEFERRED / REJECTED</td><td>Blocked, deferred, or rejected with reason</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When to Return to <code>/check</code></h2>
+  <p>
+    If feedback leads to a major product or architectural change (for example, "let's turn this into a marketplace"),
+    it must be re-planned through <code>/check</code> → <code>/PRD</code> → <code>/Build</code>.
+    <code>/Feedback</code> must not silently replace product planning.
+  </p>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 9</span>The /Doc Skill</h1>
+
+  <h2>Purpose</h2>
+  <p>Reconcile documentation with the real implementation and evaluate handoff and release readiness.</p>
+
+  <div class="callout">
+    <span class="label">Core Principle</span>
+    <p>Document reality, not intention.</p>
+  </div>
+
+  <h2>Documentation Outputs</h2>
+  <ul>
+    <li>README</li>
+    <li>Installation and configuration</li>
+    <li>Environment variables</li>
+    <li>Architecture</li>
+    <li>Project structure</li>
+    <li>API</li>
+    <li>Database</li>
+    <li>Authentication</li>
+    <li>Deployment</li>
+    <li>Testing</li>
+    <li>Troubleshooting</li>
+    <li>Known limitations</li>
+    <li>Feature status</li>
+  </ul>
+
+  <h2>Documented vs Verified</h2>
+  <p>
+    "Deployment configuration exists" is not the same as "Deployment was successfully tested."
+    <code>/Doc</code> must always distinguish Documented, Verified, Not Verified, and Unknown.
+  </p>
+
+  <h2>Final Project States</h2>
+  <table>
+    <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>DOCUMENTED</td><td>Documentation matches reality</td></tr>
+      <tr><td>READY FOR HANDOFF</td><td>Another developer can understand and run the project</td></tr>
+      <tr><td>READY FOR RELEASE</td><td>All release criteria are satisfied</td></tr>
+      <tr><td>PARTIALLY DOCUMENTED</td><td>Incomplete documentation</td></tr>
+      <tr><td>BLOCKED</td><td>Blocked</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What It Must Not Do</h2>
+  <div class="callout warn">
+    <span class="label">Forbidden</span>
+    <ul>
+      <li>Implement missing features</li>
+      <li>Hide gaps</li>
+      <li>Claim release readiness without evidence</li>
+      <li>Copy secrets into documentation</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 10</span>Using VCNO in a Real Project</h1>
+
+  <h2>Scenario</h2>
+  <p>A developer wants to build an AI-powered web application that helps shop owners analyze customer messages and understand why people don't buy.</p>
+
+  <h2>Suggested Path</h2>
+  <ol>
+    <li><strong>Idea:</strong> The developer describes the idea in natural language.</li>
+    <li><strong><code>/init</code>:</strong> The agent inspects the repository (likely empty) and writes context.</li>
+    <li><strong><code>/check</code>:</strong> Requirements, ambiguities, and risks are validated. For example: "What exactly does the AI analysis extract?"</li>
+    <li><strong><code>/PRD</code>:</strong> The product and technical blueprint is produced — data model, API, user flows, tests.</li>
+    <li><strong><code>/Build</code>:</strong> Incremental implementation: DB schema, API, auth, UI, tests.</li>
+    <li><strong><code>/Feedback</code>:</strong> User feedback (e.g., "the cards feel too crowded") becomes targeted changes.</li>
+    <li><strong><code>/Doc</code>:</strong> Final documentation is written, aligned with the real project.</li>
+  </ol>
+
+  <h2>Example Interaction</h2>
+  <pre><code>User: I want to build an app that helps shop owners
+      analyze customer messages and understand why people don't buy.
+
+User: /init
+User: /check
+User: /PRD
+User: /Build
+User: /Feedback
+User: /Doc</code></pre>
+
+  <div class="callout">
+    <span class="label">Note</span>
+    <p>The commands above are <em>stage names</em>, not terminal commands. VCNO is not a CLI package; these names are skills invoked inside a coding agent.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 11</span>Working With AI Coding Agents</h1>
+
+  <h2>VCNO and Agent Tools</h2>
+  <p>VCNO is agent-agnostic. The repository points each tool to the same source of truth through its native entry file:</p>
+
+  <table>
+    <thead><tr><th>Tool</th><th>Entry file</th><th>Points to</th></tr></thead>
+    <tbody>
+      <tr><td>Codex, Cursor, Zed, Amp, …</td><td><code>AGENTS.md</code></td><td>The source</td></tr>
+      <tr><td>Claude Code</td><td><code>CLAUDE.md</code> + <code>.claude/skills/*/SKILL.md</code></td><td><code>AGENTS.md</code> + <code>skills/</code></td></tr>
+      <tr><td>GitHub Copilot</td><td><code>.github/copilot-instructions.md</code></td><td><code>AGENTS.md</code></td></tr>
+      <tr><td>Gemini CLI</td><td><code>GEMINI.md</code></td><td><code>AGENTS.md</code></td></tr>
+      <tr><td>Windsurf</td><td><code>.windsurfrules</code></td><td><code>AGENTS.md</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Human Responsibilities</h2>
+  <ul>
+    <li>Define project goals and scope</li>
+    <li>Answer ambiguous questions</li>
+    <li>Approve the PRD before building</li>
+    <li>Make important architectural and product decisions</li>
+    <li>Review results and give feedback</li>
+  </ul>
+
+  <h2>AI Responsibilities</h2>
+  <ul>
+    <li>Inspect and understand the project</li>
+    <li>Validate requirements and ask questions</li>
+    <li>Produce the PRD</li>
+    <li>Implement incrementally and test</li>
+    <li>Process feedback</li>
+    <li>Document reality</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Warning</span>
+    <p>Do not treat AI as an infallible authority. VCNO does not replace engineering judgment; it structures AI assistance.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 12</span>Best Practices</h1>
+
+  <h2>Practical Rules</h2>
+  <ul>
+    <li>Understand before changing.</li>
+    <li>Inspect before creating.</li>
+    <li>Reuse before duplicating.</li>
+    <li>Ask when requirements are unclear.</li>
+    <li>Verify before claiming success.</li>
+    <li>Keep scope controlled.</li>
+    <li>Protect existing work.</li>
+    <li>Test meaningful changes.</li>
+    <li>Document reality.</li>
+    <li>Use Git checkpoints.</li>
+    <li>Keep humans involved in important decisions.</li>
+  </ul>
+
+  <h2>Throughout the Workflow</h2>
+  <ul>
+    <li>Complete each stage before moving to the next.</li>
+    <li>Treat each stage's output as an official source.</li>
+    <li>Do not be afraid to return to an earlier stage if new information appears.</li>
+  </ul>
+
+  <h2>When Working With AI</h2>
+  <ul>
+    <li>Treat AI as an assistant, not an authority.</li>
+    <li>Ask it to record the reasoning behind decisions.</li>
+    <li>Do not accept "it works" without verification.</li>
+  </ul>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 13</span>Common Mistakes</h1>
+
+  <ul>
+    <li>Asking AI to build everything at once.</li>
+    <li>Skipping requirements validation.</li>
+    <li>Skipping planning.</li>
+    <li>Allowing scope creep.</li>
+    <li>Trusting generated code without testing.</li>
+    <li>Rebuilding functionality that already exists.</li>
+    <li>Ignoring the existing architecture.</li>
+    <li>Adding unnecessary dependencies.</li>
+    <li>Forgetting documentation.</li>
+    <li>Mixing unrelated feedback.</li>
+    <li>Making large changes without checkpoints.</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Reminder</span>
+    <p>Each of these mistakes is effectively "skipping a stage of VCNO." If you skip a stage, its weaknesses will surface later.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 14</span>When Not to Use VCNO</h1>
+
+  <p>VCNO is designed for projects that need structure, context, and documentation. It may be unnecessary for:</p>
+
+  <ul>
+    <li>Tiny one-off scripts</li>
+    <li>Simple experiments</li>
+    <li>Disposable prototypes</li>
+    <li>Extremely small changes on existing projects</li>
+  </ul>
+
+  <div class="callout">
+    <span class="label">Note</span>
+    <p>This depends on project complexity. If the project is growing or must be maintained, VCNO becomes useful — even if it looked simple at first.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 15</span>Limitations</h1>
+
+  <p>VCNO honestly accepts its limitations:</p>
+
+  <ul>
+    <li>It does not guarantee bug-free software.</li>
+    <li>It does not eliminate AI hallucinations.</li>
+    <li>It does not replace testing.</li>
+    <li>It does not replace human decisions.</li>
+    <li>It does not guarantee security.</li>
+    <li>It does not automatically understand ambiguous requirements.</li>
+    <li>It does not guarantee production readiness.</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Important</span>
+    <p>VCNO is a human framework that controls AI. Its success depends on the quality of human judgment and consistent follow-through.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 16</span>Versioning and Future Releases</h1>
+
+  <h2>Current Version</h2>
+  <p>This documentation describes <strong>VCNO v1.0</strong>.</p>
+
+  <h2>Future Releases</h2>
+  <p>
+    Future releases may introduce new skills, workflow improvements, or documentation changes.
+    No specific future capability is guaranteed.
+  </p>
+
+  <h2>Official Repository</h2>
+  <p>
+    For the latest version and updates, follow the official repository:
+    <br>
+    <strong>https://github.com/MRAVLM/VCNO</strong>
+  </p>
+
+  <div class="callout">
+    <span class="label">Note</span>
+    <p>This documentation does not update itself. Check the repository for the current status.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Chapter 17</span>Conclusion</h1>
+
+  <p>The goal of VCNO is not "let AI write everything."</p>
+  <p>The goal is to give AI a structured engineering workflow while keeping the human in control.</p>
+
+  <div class="callout ok">
+    <span class="label">Final Philosophy</span>
+    <p>Understand before changing. Validate before planning. Plan before building. Verify before claiming. Document reality, not intention.</p>
+  </div>
+
+  <p>
+    VCNO treats AI as an engineering assistant inside a controlled process.
+    It does not replace human judgment; it structures AI assistance.
+  </p>
+</section>
+
+<section class="page">
+  <h1 class="chapter"><span class="num">Appendix A</span>Document Metadata</h1>
+
+  <div class="meta-block">
+    <dl>
+      <dt>Document</dt><dd>VCNO Official User Guide</dd>
+      <dt>Project</dt><dd>VCNO</dd>
+      <dt>Project Version</dt><dd>v1.0</dd>
+      <dt>Documentation Version</dt><dd>v1.0</dd>
+      <dt>Repository</dt><dd>https://github.com/MRAVLM/VCNO</dd>
+      <dt>Language</dt><dd>Persian / English</dd>
+      <dt>License</dt><dd>MIT</dd>
+      <dt>Created by</dt><dd>MRAVLM (Amirali Marjani)</dd>
+      <dt>Built with</dt><dd>AI coding agent assistance</dd>
+      <dt>Date</dt><dd>2026-10-04</dd>
+    </dl>
+  </div>
+
+  <h2>Verification Status</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>VCNO v1.0 workflow order</td><td>Verified (from README)</td></tr>
+      <tr><td>Six skills and their responsibilities</td><td>Verified (from README and skill files)</td></tr>
+      <tr><td>Philosophy and principles</td><td>Verified (from README)</td></tr>
+      <tr><td>License (MIT)</td><td>Verified (from README)</td></tr>
+      <tr><td>Author (MRAVLM / Amirali Marjani)</td><td>Verified (from README)</td></tr>
+      <tr><td>Repository URL</td><td>Verified</td></tr>
+      <tr><td>AI tool entry points</td><td>Verified (from README)</td></tr>
+      <tr><td>Exact invocation mechanism in each agent</td><td>Needs confirmation (depends on agent)</td></tr>
+      <tr><td>PDF rendering of this HTML</td><td>Not verified in this environment</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">Note</span>
+    <p>This handbook was written from information available in the VCNO repository as of the date shown. Anything marked "Needs confirmation" or "Not verified" should be checked against the live repository before publishing future revisions.</p>
+  </div>
+</section>
+
+</body>
+</html>
